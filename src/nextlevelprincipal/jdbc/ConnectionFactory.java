@@ -15,7 +15,7 @@ import java.sql.Connection;
  */
 public class ConnectionFactory {
     public static Connection getConnection(){
-        final String url = "jdbc:mysql://localhost:3306/nextlevelpiekas?verifyServerCertificate=false&useSSL=true";
+        final String url = "jdbc:mysql: //localhost:3306/nextlevelpiekas?verifyServerCertificate=false&useSSL=true";
         final String user = "andreypiekas";
         final String password = "piekas123";
        
