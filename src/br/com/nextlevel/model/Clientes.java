@@ -94,15 +94,12 @@ public class Clientes {
     public void setEndereco(Enderecos endereco) {
         this.endereco = endereco;
     }
-    
+
     private int id;
     private String nome;
     private String email;
     private String cpf;
     private String telefone;
     private Enderecos endereco;
-    
-    
-    
-    
+
 }
