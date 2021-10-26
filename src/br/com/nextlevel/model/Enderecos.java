@@ -10,6 +10,16 @@ package br.com.nextlevel.model;
  * @author andrey.piekas
  */
 public class Enderecos {
+    
+    
+    private int idEndereco_entrega;
+    private String cep;
+    private String rua;
+    private int numero;
+    private String complemento;
+    private String bairro;
+    private String cidade;
+    private String estado;
 
     /**
      * @return the idEndereco_entrega
@@ -123,13 +133,5 @@ public class Enderecos {
         this.estado = estado;
     }
 
-    private int idEndereco_entrega;
-    private String cep;
-    private String rua;
-    private int numero;
-    private String complemento;
-    private String bairro;
-    private String cidade;
-    private String estado;
 
 }

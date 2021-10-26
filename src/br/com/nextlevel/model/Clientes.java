@@ -11,6 +11,13 @@ package br.com.nextlevel.model;
  */
 public class Clientes {
 
+    private int id;
+    private String nome;
+    private String email;
+    private String cpf;
+    private String telefone;
+    private Enderecos endereco;
+
     /**
      * @return the id
      */
@@ -94,12 +101,5 @@ public class Clientes {
     public void setEndereco(Enderecos endereco) {
         this.endereco = endereco;
     }
-
-    private int id;
-    private String nome;
-    private String email;
-    private String cpf;
-    private String telefone;
-    private Enderecos endereco;
 
 }
