@@ -29,6 +29,13 @@ public class EnderecosDAO {
     //metodos para cadastrar os enderecos
     
     public void cadastrarEndereco(Enderecos obj){
+        try {
+            String sql = "insert into enderecos_entrega(idEndereco_entrega, Pedido_idPedido, cep, rua, numero, complemento, bairro, cidade, estado) "
+                    + "values(?,?,?,?,?,?,?,?,?)";
+            
+        } catch (Exception e) {
+        }
+
         
     }
     
