@@ -15,7 +15,7 @@ public class TestaConexao {
     public static void main(String[] args) {
         
         try {
-            FabricaConexao.criaConexao();
+            ConnectionFactory.getConnection();
             //tela com uma mensagem
             JOptionPane.showMessageDialog(null, "CONEXÃO BEM SUCEDIDA");
         } catch (Exception e) {

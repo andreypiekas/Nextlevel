@@ -5,7 +5,7 @@
  */
 package be.com.nextlevel.dao;
 
-import br.com.nextlevel.jdbc.FabricaConexao;
+import br.com.nextlevel.jdbc.ConnectionFactory;
 import java.sql.*;
 import br.com.nextlevel.model.Enderecos;
 
@@ -21,17 +21,31 @@ public class EnderecosDAO {
 
     public EnderecosDAO() {
         //Garante que uma conexao esteja aberta com o banco de dados
-        this.conexao = FabricaConexao.criaConexao();
+        this.conexao = ConnectionFactory.getConnection();
 
     }
 
     //metodos
     //metodos para cadastrar os enderecos
     
-    public void cadastrarEndereco(Enderecos obj){
+    public void cadastrarEndereco(Enderecos objEndereco){
         try {
-            String sql = "insert into enderecos_entrega(idEndereco_entrega, Pedido_idPedido, cep, rua, numero, complemento, bairro, cidade, estado) "
-                    + "values(?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into enderecos_entrega(Clientes_idClientes, cep, rua, numero, complemento, bairro, cidade, estado) "
+                    + "values(?,?,?,?,?,?,?,?)";
+            //
+            
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            
+            comando.setString(1, objEndereco.getCep());
+            comando.setString(2, objEndereco.getRua());
+            comando.setInt(3, objEndereco.getNumero());
+            comando.setString(4, objEndereco.getComplemento());
+            comando.setString(5, objEndereco.getBairro());
+            comando.setString(6, objEndereco.getCidade());
+            comando.setString(7, objEndereco.getEstado());
+            
+            
+            
             
         } catch (Exception e) {
         }

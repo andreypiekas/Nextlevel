@@ -13,8 +13,8 @@ import java.sql.Connection;
  *
  * @author andrey.piekas
  */
-public class FabricaConexao {
-    public static Connection criaConexao(){
+public class ConnectionFactory {
+    public static Connection getConnection(){
         final String url = "jdbc:mysql: //localhost:3306/nextlevelpiekas?verifyServerCertificate=false&useSSL=true";
         final String user = "andreypiekas";
         final String password = "piekas123";
