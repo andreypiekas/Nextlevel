@@ -21,7 +21,8 @@ public class ConnectionFactory {
        
             try {
                // conn = 
-                DriverManager.getConnection(url, user, password);
+                return DriverManager.getConnection(url, user, password);
+                
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
                 //Lançar um erro na tela do usuário quando o programa executa
@@ -30,8 +31,9 @@ public class ConnectionFactory {
 //                System.out.println("SQLException: " + ex.getMessage());
 //                System.out.println("SQLState: " + ex.getSQLState());
 //                System.out.println("VendorError: " + ex.getErrorCode());
+            //return null;
             } 
-        return null;
+     
                 
 }   
 }

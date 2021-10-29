@@ -12,7 +12,7 @@ package br.com.nextlevel.model;
 public class Enderecos {
     
     
-    private int idEndereco_entrega;
+    private int idEndereco;
     private String cep;
     private String rua;
     private int numero;
@@ -20,16 +20,26 @@ public class Enderecos {
     private String bairro;
     private String cidade;
     private String estado;
+    private int Clientes_idClientes;
+
+    public int getIdEndereco() {
+        return idEndereco;
+    }
+
+    public void setIdEndereco(int idEndereco) {
+        this.idEndereco = idEndereco;
+    }
+
+    public int getClientes_idClientes() {
+        return Clientes_idClientes;
+    }
+
+    public void setClientes_idClientes(int Clientes_idClientes) {
+        this.Clientes_idClientes = Clientes_idClientes;
+    }
     
     //getters e setters
 
-    public int getIdEndereco_entrega() {
-        return idEndereco_entrega;
-    }
-
-    public void setIdEndereco_entrega(int idEndereco_entrega) {
-        this.idEndereco_entrega = idEndereco_entrega;
-    }
 
     public String getCep() {
         return cep;

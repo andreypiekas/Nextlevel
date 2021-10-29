@@ -5,6 +5,10 @@
  */
 package br.com.nextlevel.view;
 
+import br.com.nextlevel.dao.EnderecosDAO;
+import br.com.nextlevel.model.Enderecos;
+import javax.swing.plaf.ComboBoxUI;
+
 /**
  *
  * @author andrey.piekas
@@ -47,8 +51,22 @@ public class TelaClientes extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         ClienteIdentificadorEnderecos = new javax.swing.JLabel();
         ClienteIdentificadorUF = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        ClienteIdentificadorESTADO = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
+        jButton2 = new javax.swing.JButton();
+        ClienteIdentificadorButtonSALVARENDERECO = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        ClienteIdentificadorCEP = new javax.swing.JFormattedTextField();
+        ClienteIdentificadorRUA = new javax.swing.JFormattedTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        ClienteIdentificadorCOMPLEMENTO = new javax.swing.JFormattedTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        ClienteIdentificadorBAIRRO = new javax.swing.JFormattedTextField();
+        jLabel15 = new javax.swing.JLabel();
+        ClienteIdentificadorCIDADE = new javax.swing.JFormattedTextField();
+        ClienteIdentificadorNUMERO = new javax.swing.JFormattedTextField();
         jPanel2 = new javax.swing.JPanel();
         ClienteConsultaID = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -104,59 +122,118 @@ public class TelaClientes extends javax.swing.JFrame {
 
         ClienteIdentificadorUF.setText("UF");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "    AC", "    AL", "    AP", "    AM", "    BA", "    CE", "    DF", "    ES", "    GO", "    MA", "    MT", "    MS", "    MG", "    PA", "    PB", "    PR", "    PE", "    PI", "    RJ", "    RN", "    RS", "    RO", "    RR", "    SC", "    SP", "    SE", "    TO", " " }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        ClienteIdentificadorESTADO.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", " " }));
+        ClienteIdentificadorESTADO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                ClienteIdentificadorESTADOActionPerformed(evt);
             }
         });
+
+        jButton2.setText("jButton2");
+
+        ClienteIdentificadorButtonSALVARENDERECO.setText("Salvar Endereco");
+        ClienteIdentificadorButtonSALVARENDERECO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClienteIdentificadorButtonSALVARENDERECOActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("CEP");
+
+        jLabel11.setText("Rua");
+
+        jLabel12.setText("Numero");
+
+        jLabel13.setText("Compl");
+
+        jLabel14.setText("Bairro");
+
+        jLabel15.setText("Cidade");
+
+        ClienteIdentificadorCIDADE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClienteIdentificadorCIDADEActionPerformed(evt);
+            }
+        });
+
+        ClienteIdentificadorNUMERO.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(ClienteIdentificadorEnderecos))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jScrollPane1)
-                                        .addComponent(ClienteIdentificadorTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jLabel2)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(ClienteIdentificadorCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(ClienteIdentificadorNome)
-                                .addComponent(ClienteIdentificadorEmail))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
-                                .addComponent(ClienteIdentificadorUF)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(66, 66, 66))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(ClienteIdentificadorButtonNovo)
-                        .addGap(51, 51, 51)
-                        .addComponent(ClienteIdentificadorButtonEditar)
-                        .addGap(45, 45, 45)
-                        .addComponent(ClienteIdentificadorButtonDeletar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(169, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator1))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(ClienteIdentificadorEnderecos)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(ClienteIdentificadorButtonSALVARENDERECO)
+                                .addGap(8, 8, 8))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ClienteIdentificadorCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ClienteIdentificadorRUA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton2)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel15)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(ClienteIdentificadorCIDADE, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(66, 66, 66)
+                                        .addComponent(ClienteIdentificadorUF)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(ClienteIdentificadorESTADO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(ClienteIdentificadorNUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel13)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(ClienteIdentificadorCOMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel14)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(ClienteIdentificadorBAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 40, Short.MAX_VALUE)))
+                        .addGap(156, 156, 156))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jScrollPane1)
+                                    .addComponent(ClienteIdentificadorTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(ClienteIdentificadorCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ClienteIdentificadorNome)
+                            .addComponent(ClienteIdentificadorEmail))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(ClienteIdentificadorButtonNovo)
+                .addGap(54, 54, 54)
+                .addComponent(ClienteIdentificadorButtonEditar)
+                .addGap(45, 45, 45)
+                .addComponent(ClienteIdentificadorButtonDeletar)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,16 +260,35 @@ public class TelaClientes extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ClienteIdentificadorEnderecos)
+                    .addComponent(jButton2))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(ClienteIdentificadorCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15)
+                    .addComponent(ClienteIdentificadorCIDADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ClienteIdentificadorUF)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                    .addComponent(ClienteIdentificadorESTADO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(ClienteIdentificadorRUA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13)
+                    .addComponent(ClienteIdentificadorCOMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14)
+                    .addComponent(ClienteIdentificadorBAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ClienteIdentificadorNUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addComponent(ClienteIdentificadorButtonSALVARENDERECO)
+                .addGap(27, 27, 27)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ClienteIdentificadorButtonDeletar)
                     .addComponent(ClienteIdentificadorButtonEditar)
-                    .addComponent(ClienteIdentificadorButtonNovo)
-                    .addComponent(ClienteIdentificadorButtonDeletar))
-                .addGap(48, 48, 48))
+                    .addComponent(ClienteIdentificadorButtonNovo))
+                .addGap(20, 20, 20))
         );
 
         jTabbedPane1.addTab("Dados do Cliente", jPanel1);
@@ -253,7 +349,7 @@ public class TelaClientes extends javax.swing.JFrame {
                 .addComponent(ConsultaClientePESQUISAR, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane3))
@@ -272,7 +368,7 @@ public class TelaClientes extends javax.swing.JFrame {
                     .addComponent(jButton1))
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(187, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Consulta Cliente", jPanel2);
@@ -307,9 +403,9 @@ public class TelaClientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ClienteIdentificadorButtonNovoActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void ClienteIdentificadorESTADOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteIdentificadorESTADOActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_ClienteIdentificadorESTADOActionPerformed
 
     private void ClienteConsultaIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteConsultaIDActionPerformed
         // TODO add your handling code here:
@@ -319,6 +415,34 @@ public class TelaClientes extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ClienteIdentificadorButtonSALVARENDERECOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteIdentificadorButtonSALVARENDERECOActionPerformed
+        // TODO add your handling code here:
+        try {
+            Enderecos endereco = new Enderecos();
+            
+            endereco.setCep(ClienteIdentificadorCEP.getText());
+            endereco.setRua(ClienteIdentificadorRUA.getText());
+            endereco.setNumero(Integer.parseInt(ClienteIdentificadorNUMERO.getText()));
+            endereco.setComplemento(ClienteIdentificadorCOMPLEMENTO.getText());
+            endereco.setBairro(ClienteIdentificadorBAIRRO.getText());
+            endereco.setCidade(ClienteIdentificadorCIDADE.getText());
+            endereco.setEstado(ClienteIdentificadorESTADO.getSelectedItem().toString());
+            
+            EnderecosDAO endereceoDAO = new EnderecosDAO();
+            endereceoDAO.cadastrarEndereco(endereco);
+            
+            
+            
+        } catch (Exception e) {
+        }
+        
+        
+    }//GEN-LAST:event_ClienteIdentificadorButtonSALVARENDERECOActionPerformed
+
+    private void ClienteIdentificadorCIDADEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteIdentificadorCIDADEActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ClienteIdentificadorCIDADEActionPerformed
 
     /**
      * @param args the command line arguments
@@ -360,21 +484,35 @@ public class TelaClientes extends javax.swing.JFrame {
     private javax.swing.JTextField ClienteConsultaCIDADE;
     private javax.swing.JTextField ClienteConsultaID;
     private javax.swing.JTable ClienteConsultaTABELA;
+    private javax.swing.JFormattedTextField ClienteIdentificadorBAIRRO;
     private javax.swing.JButton ClienteIdentificadorButtonDeletar;
     private javax.swing.JButton ClienteIdentificadorButtonEditar;
     private javax.swing.JButton ClienteIdentificadorButtonNovo;
+    private javax.swing.JButton ClienteIdentificadorButtonSALVARENDERECO;
+    private javax.swing.JFormattedTextField ClienteIdentificadorCEP;
+    private javax.swing.JFormattedTextField ClienteIdentificadorCIDADE;
+    private javax.swing.JFormattedTextField ClienteIdentificadorCOMPLEMENTO;
     private javax.swing.JFormattedTextField ClienteIdentificadorCPF;
+    private javax.swing.JComboBox<String> ClienteIdentificadorESTADO;
     private javax.swing.JTextField ClienteIdentificadorEmail;
     private javax.swing.JLabel ClienteIdentificadorEnderecos;
     private javax.swing.JTextPane ClienteIdentificadorID;
+    private javax.swing.JFormattedTextField ClienteIdentificadorNUMERO;
     private javax.swing.JTextField ClienteIdentificadorNome;
+    private javax.swing.JFormattedTextField ClienteIdentificadorRUA;
     private javax.swing.JFormattedTextField ClienteIdentificadorTelefone;
     private javax.swing.JLabel ClienteIdentificadorUF;
     private javax.swing.JTextField ConsultaClientePESQUISAR;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
