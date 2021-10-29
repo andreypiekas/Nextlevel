@@ -184,11 +184,11 @@ public class TelaClientes extends javax.swing.JFrame {
                                 .addComponent(ClienteIdentificadorButtonSALVARENDERECO)
                                 .addGap(8, 8, 8))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ClienteIdentificadorCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ClienteIdentificadorRUA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26)
+                                    .addComponent(ClienteIdentificadorCEP, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                                    .addComponent(ClienteIdentificadorRUA))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton2)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -421,6 +421,7 @@ public class TelaClientes extends javax.swing.JFrame {
         try {
             Enderecos endereco = new Enderecos();
             
+            endereco.setClientes_idClientes(Integer.parseInt(ClienteIdentificadorID.getText()));
             endereco.setCep(ClienteIdentificadorCEP.getText());
             endereco.setRua(ClienteIdentificadorRUA.getText());
             endereco.setNumero(Integer.parseInt(ClienteIdentificadorNUMERO.getText()));
