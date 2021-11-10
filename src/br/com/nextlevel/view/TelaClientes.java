@@ -7,6 +7,7 @@ package br.com.nextlevel.view;
 
 import br.com.nextlevel.dao.EnderecosDAO;
 import br.com.nextlevel.model.Enderecos;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.ComboBoxUI;
 
 /**
@@ -21,6 +22,7 @@ public class TelaClientes extends javax.swing.JFrame {
     public TelaClientes() {
         initComponents();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -67,6 +69,7 @@ public class TelaClientes extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         ClienteIdentificadorCIDADE = new javax.swing.JFormattedTextField();
         ClienteIdentificadorNUMERO = new javax.swing.JFormattedTextField();
+        ClienteIdentificadorButtonLISTARENDERECOS = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         ClienteConsultaID = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -74,7 +77,7 @@ public class TelaClientes extends javax.swing.JFrame {
         ClienteConsultaCIDADE = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         ConsultaClientePESQUISAR = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        TelaClientesConsultaButtonPesquisar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         ClienteConsultaTABELA = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
@@ -158,6 +161,13 @@ public class TelaClientes extends javax.swing.JFrame {
 
         ClienteIdentificadorNUMERO.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
+        ClienteIdentificadorButtonLISTARENDERECOS.setText("Listar Enderecos");
+        ClienteIdentificadorButtonLISTARENDERECOS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClienteIdentificadorButtonLISTARENDERECOSActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -211,8 +221,10 @@ public class TelaClientes extends javax.swing.JFrame {
                                         .addComponent(jLabel14)
                                         .addGap(18, 18, 18)
                                         .addComponent(ClienteIdentificadorBAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 40, Short.MAX_VALUE)))
-                        .addGap(156, 156, 156))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(49, 49, 49)
+                        .addComponent(ClienteIdentificadorButtonLISTARENDERECOS)
+                        .addGap(32, 32, 32))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -280,7 +292,9 @@ public class TelaClientes extends javax.swing.JFrame {
                     .addComponent(ClienteIdentificadorBAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ClienteIdentificadorNUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addComponent(ClienteIdentificadorButtonSALVARENDERECO)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ClienteIdentificadorButtonSALVARENDERECO)
+                    .addComponent(ClienteIdentificadorButtonLISTARENDERECOS))
                 .addGap(27, 27, 27)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -305,10 +319,10 @@ public class TelaClientes extends javax.swing.JFrame {
 
         jLabel9.setText("Nome");
 
-        jButton1.setText("Pesquisar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        TelaClientesConsultaButtonPesquisar.setText("Pesquisar");
+        TelaClientesConsultaButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                TelaClientesConsultaButtonPesquisarActionPerformed(evt);
             }
         });
 
@@ -348,7 +362,7 @@ public class TelaClientes extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(ConsultaClientePESQUISAR, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(TelaClientesConsultaButtonPesquisar)
                 .addContainerGap(134, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
@@ -365,7 +379,7 @@ public class TelaClientes extends javax.swing.JFrame {
                     .addComponent(ClienteConsultaCIDADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(ConsultaClientePESQUISAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(TelaClientesConsultaButtonPesquisar))
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(187, Short.MAX_VALUE))
@@ -397,6 +411,7 @@ public class TelaClientes extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ClienteIdentificadorButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteIdentificadorButtonNovoActionPerformed
@@ -411,10 +426,10 @@ public class TelaClientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ClienteConsultaIDActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void TelaClientesConsultaButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClientesConsultaButtonPesquisarActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_TelaClientesConsultaButtonPesquisarActionPerformed
 
     private void ClienteIdentificadorButtonSALVARENDERECOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteIdentificadorButtonSALVARENDERECOActionPerformed
         // TODO add your handling code here:
@@ -436,6 +451,7 @@ public class TelaClientes extends javax.swing.JFrame {
             
             
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
         
         
@@ -444,6 +460,12 @@ public class TelaClientes extends javax.swing.JFrame {
     private void ClienteIdentificadorCIDADEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteIdentificadorCIDADEActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ClienteIdentificadorCIDADEActionPerformed
+
+    private void ClienteIdentificadorButtonLISTARENDERECOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteIdentificadorButtonLISTARENDERECOSActionPerformed
+        // TODO add your handling code here:
+        TelaEnderecos telaListaEnderecos = new TelaEnderecos();
+        telaListaEnderecos.setVisible(true);
+    }//GEN-LAST:event_ClienteIdentificadorButtonLISTARENDERECOSActionPerformed
 
     /**
      * @param args the command line arguments
@@ -456,7 +478,7 @@ public class TelaClientes extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -488,6 +510,7 @@ public class TelaClientes extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField ClienteIdentificadorBAIRRO;
     private javax.swing.JButton ClienteIdentificadorButtonDeletar;
     private javax.swing.JButton ClienteIdentificadorButtonEditar;
+    private javax.swing.JButton ClienteIdentificadorButtonLISTARENDERECOS;
     private javax.swing.JButton ClienteIdentificadorButtonNovo;
     private javax.swing.JButton ClienteIdentificadorButtonSALVARENDERECO;
     private javax.swing.JFormattedTextField ClienteIdentificadorCEP;
@@ -504,7 +527,7 @@ public class TelaClientes extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField ClienteIdentificadorTelefone;
     private javax.swing.JLabel ClienteIdentificadorUF;
     private javax.swing.JTextField ConsultaClientePESQUISAR;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton TelaClientesConsultaButtonPesquisar;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;

@@ -8,6 +8,8 @@ package br.com.nextlevel.dao;
 import br.com.nextlevel.jdbc.ConnectionFactory;
 import java.sql.*;
 import br.com.nextlevel.model.Enderecos;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -34,7 +36,6 @@ public class EnderecosDAO {
             String sql = "insert into endereco(Clientes_idClientes, cep, rua, numero, complemento, bairro, cidade, estado) values(?,?,?,?,?,?,?,?)";
 
             //
-
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setInt(1, objEndereco.getClientes_idClientes());
@@ -45,7 +46,6 @@ public class EnderecosDAO {
             comando.setString(6, objEndereco.getBairro());
             comando.setString(7, objEndereco.getCidade());
             comando.setString(8, objEndereco.getEstado());
-                        
 
             //executar o comando
             comando.execute();
@@ -54,6 +54,41 @@ public class EnderecosDAO {
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
+        }
+
+    }
+
+    public List<Enderecos> listarEnderecos() {
+
+        try {
+            List<Enderecos> lista = new ArrayList<>();
+            String sql = "select * from endereco";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            ResultSet rs = comando.executeQuery();
+            // System.out.println("RESULT SET" + rs);
+
+            while (rs.next()) {
+                Enderecos obj = new Enderecos();
+
+                obj.setIdEndereco(rs.getInt("idEndereco"));
+                obj.setCep(rs.getString("cep"));
+                obj.setRua(rs.getString("rua"));
+                obj.setNumero(rs.getInt("numero"));
+                obj.setComplemento(rs.getString("complemento"));
+                obj.setBairro(rs.getString("bairro"));
+                obj.setCidade(rs.getString("cidade"));
+                obj.setEstado(rs.getString("estado"));
+
+                // System.out.println("OBJETO" + obj);
+                lista.add(obj);
+
+            }
+            // System.out.println("LISTA" + lista);
+
+            return lista;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+            return null;
         }
 
     }

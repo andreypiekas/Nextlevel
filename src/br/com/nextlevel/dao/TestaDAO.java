@@ -19,22 +19,25 @@ import javax.swing.JOptionPane;
 public class TestaDAO {
 
     public static void main(String[] args) {
-        Enderecos enderecoTeste = new Enderecos();
 
-        enderecoTeste.setClientes_idClientes(1);
-        enderecoTeste.setCep("1");
-        enderecoTeste.setRua("Quatorze de agosto, 3161");
-        enderecoTeste.setNumero(3161);
-        enderecoTeste.setComplemento("Epros Atacado");
-        enderecoTeste.setBairro("Líder");
-        enderecoTeste.setCidade("Chapecó");
-        enderecoTeste.setEstado("SC");
-        
-        
+        //TESTE CADASTRAR
+//        Enderecos enderecoTeste = new Enderecos();
+//
+//        enderecoTeste.setClientes_idClientes(1);
+//        enderecoTeste.setCep("1");
+//        enderecoTeste.setRua("Quatorze de agosto, 3161");
+//        enderecoTeste.setNumero(3161);
+//        enderecoTeste.setComplemento("Epros Atacado");
+//        enderecoTeste.setBairro("Líder");
+//        enderecoTeste.setCidade("Chapecó");
+//        enderecoTeste.setEstado("SC");
+//
+//        EnderecosDAO dao = new EnderecosDAO();
+//
+//        dao.cadastrarEndereco(enderecoTeste);
+        //TESTE LISTAR
         EnderecosDAO dao = new EnderecosDAO();
-        
-        dao.cadastrarEndereco(enderecoTeste);
-        
+        dao.listarEnderecos();
 
     }
 
