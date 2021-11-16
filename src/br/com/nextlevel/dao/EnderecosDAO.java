@@ -33,19 +33,19 @@ public class EnderecosDAO {
     //metodos para cadastrar os enderecos
     public void cadastrarEndereco(Enderecos objEndereco) {
         try {
-            String sql = "insert into endereco(Clientes_idClientes, cep, rua, numero, complemento, bairro, cidade, estado) values(?,?,?,?,?,?,?,?)";
+            String sql = "insert into tb_enderecos(id_cliente, cep, rua, numero, complemento, bairro, cidade, estado) values(?,?,?,?,?,?,?,?)";
 
             //
             PreparedStatement comando = conexao.prepareStatement(sql);
 
-            comando.setInt(1, objEndereco.getClientes_idClientes());
+            comando.setInt(1, objEndereco.getCliente().getId());
             comando.setString(2, objEndereco.getCep());
             comando.setString(3, objEndereco.getRua());
             comando.setInt(4, objEndereco.getNumero());
             comando.setString(5, objEndereco.getComplemento());
             comando.setString(6, objEndereco.getBairro());
             comando.setString(7, objEndereco.getCidade());
-            comando.setString(8, objEndereco.getEstado());
+            comando.setString(8, objEndereco.getUf());
 
             //executar o comando
             comando.execute();
@@ -70,14 +70,14 @@ public class EnderecosDAO {
             while (rs.next()) {
                 Enderecos obj = new Enderecos();
 
-                obj.setIdEndereco(rs.getInt("idEndereco"));
+                obj.setId(rs.getInt("id"));
                 obj.setCep(rs.getString("cep"));
                 obj.setRua(rs.getString("rua"));
                 obj.setNumero(rs.getInt("numero"));
                 obj.setComplemento(rs.getString("complemento"));
                 obj.setBairro(rs.getString("bairro"));
                 obj.setCidade(rs.getString("cidade"));
-                obj.setEstado(rs.getString("estado"));
+                obj.setUf(rs.getString("uf"));
 
                 // System.out.println("OBJETO" + obj);
                 lista.add(obj);
