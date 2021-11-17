@@ -100,6 +100,8 @@ public class Enderecos {
     }
     
 
-   
+   //getter e setter para o id do cliente
+    
+    
 
 }

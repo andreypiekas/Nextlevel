@@ -29,14 +29,14 @@ public class TelaEnderecos extends javax.swing.JFrame {
 
         for (Enderecos i : lista) {
             tabela.addRow(new Object[]{
-                i.getIdEndereco(),
+                i.getId(),
                 i.getCep(),
                 i.getRua(),
                 i.getNumero(),
                 i.getComplemento(),
                 i.getBairro(),
                 i.getCidade(),
-                i.getEstado()
+                i.getUf()
 
             });
         }

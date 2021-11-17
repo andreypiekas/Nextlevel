@@ -436,14 +436,14 @@ public class TelaClientes extends javax.swing.JFrame {
         try {
             Enderecos endereco = new Enderecos();
             
-            endereco.setClientes_idClientes(Integer.parseInt(ClienteIdentificadorID.getText()));
+
             endereco.setCep(ClienteIdentificadorCEP.getText());
             endereco.setRua(ClienteIdentificadorRUA.getText());
             endereco.setNumero(Integer.parseInt(ClienteIdentificadorNUMERO.getText()));
             endereco.setComplemento(ClienteIdentificadorCOMPLEMENTO.getText());
             endereco.setBairro(ClienteIdentificadorBAIRRO.getText());
             endereco.setCidade(ClienteIdentificadorCIDADE.getText());
-            endereco.setEstado(ClienteIdentificadorESTADO.getSelectedItem().toString());
+            endereco.setUf(ClienteIdentificadorESTADO.getSelectedItem().toString());
             
             EnderecosDAO endereceoDAO = new EnderecosDAO();
             endereceoDAO.cadastrarEndereco(endereco);

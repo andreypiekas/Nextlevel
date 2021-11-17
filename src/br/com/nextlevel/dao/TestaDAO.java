@@ -6,6 +6,7 @@
 package br.com.nextlevel.dao;
 
 import br.com.nextlevel.jdbc.ConnectionFactory;
+import br.com.nextlevel.model.Clientes;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,15 @@ public class TestaDAO {
 //
 //        dao.cadastrarEndereco(enderecoTeste);
         //TESTE LISTAR
+        Clientes clienteTeste = new Clientes();
+        clienteTeste.setCpf("123.456.789-50");
+        clienteTeste.setEmail("teste@gmail.com");
+        //clienteTeste.setId("1");
+        clienteTeste.setTelefone("49984329374");
+        
+        
+        
+        
         EnderecosDAO dao = new EnderecosDAO();
         dao.listarEnderecos();
 
