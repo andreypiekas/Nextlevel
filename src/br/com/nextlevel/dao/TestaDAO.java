@@ -43,11 +43,16 @@ public class TestaDAO {
         //clienteTeste.setId("1");
         clienteTeste.setTelefone("49984329374");
         
+        System.out.println(clienteTeste.toString());
+
+        ClientesDAO dao = new ClientesDAO();
+        dao.CadastrarCliente(clienteTeste);
         
         
+        System.out.println(clienteTeste.toString());
         
-        EnderecosDAO dao = new EnderecosDAO();
-        dao.listarEnderecos();
+//        EnderecosDAO dao = new EnderecosDAO();
+//        dao.listarEnderecos();
 
     }
 
