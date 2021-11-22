@@ -38,18 +38,19 @@ public class TestaDAO {
 //        dao.cadastrarEndereco(enderecoTeste);
         //TESTE LISTAR
         Clientes clienteTeste = new Clientes();
+        clienteTeste.setNome("Manuel Silva");
         clienteTeste.setCpf("123.456.789-50");
         clienteTeste.setEmail("teste@gmail.com");
         //clienteTeste.setId("1");
         clienteTeste.setTelefone("49984329374");
         
-        System.out.println(clienteTeste.toString());
+        System.out.println(clienteTeste.getId());
 
         ClientesDAO dao = new ClientesDAO();
         dao.CadastrarCliente(clienteTeste);
         
         
-        System.out.println(clienteTeste.toString());
+        System.out.println(clienteTeste.getId());
         
 //        EnderecosDAO dao = new EnderecosDAO();
 //        dao.listarEnderecos();

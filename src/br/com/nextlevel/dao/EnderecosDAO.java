@@ -33,24 +33,27 @@ public class EnderecosDAO {
     //metodos para cadastrar os enderecos
     public void cadastrarEndereco(Enderecos objEndereco) {
         try {
-            String sql = "insert into tb_enderecos(id_cliente, cep, rua, numero, complemento, bairro, cidade, estado) values(?,?,?,?,?,?,?,?)";
+              //2º passo: criar uma string de comando SQL
+            String sql = "insert into tb_enderecos(cep, rua, numero, complemento, bairro, cidade, uf, id_cliente)"
+                    + "values (?,?,?,?,?,?,?,?)";
 
-            //
+            //3º passo: preparar o comando SQL para o driver
             PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setString(1, objEndereco.getCep());
+            comando.setString(2, objEndereco.getRua());
+            comando.setInt(3, objEndereco.getNumero());
+            comando.setString(4, objEndereco.getComplemento());
+            comando.setString(5, objEndereco.getBairro());
+            comando.setString(6, objEndereco.getCidade());
+            comando.setString(7, objEndereco.getUf());
+            comando.setInt(8, objEndereco.getCliente().getId());
 
-            comando.setInt(1, objEndereco.getCliente().getId());
-            comando.setString(2, objEndereco.getCep());
-            comando.setString(3, objEndereco.getRua());
-            comando.setInt(4, objEndereco.getNumero());
-            comando.setString(5, objEndereco.getComplemento());
-            comando.setString(6, objEndereco.getBairro());
-            comando.setString(7, objEndereco.getCidade());
-            comando.setString(8, objEndereco.getUf());
-
-            //executar o comando
+            //4º passo: executar o comando sql e fechar a conexão
             comando.execute();
             comando.close();
-            JOptionPane.showMessageDialog(null, "Cadastro efetuado com sucesso!");
+
+            //Se chegar aqui o cadastro foi efetuado com sucesso
+            JOptionPane.showMessageDialog(null, "Endereço cadastrado com sucesso!");
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
